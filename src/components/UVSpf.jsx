@@ -70,7 +70,10 @@ export default function UVSpf() {
     // Fallback to public OpenWeatherMap geocoding
     const publicUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(q)}&limit=1&appid=${API_KEY}`
     const r2 = await fetch(publicUrl)
-    if (!r2.ok) throw new Error('Geocoding request failed')
+    if (!r2.ok) {
+      const errorText = await r2.text()
+      throw new Error(`Geocoding failed: ${r2.status} - ${errorText}`)
+    }
     return await r2.json()
   }
 
@@ -86,7 +89,10 @@ export default function UVSpf() {
     // Fallback to public OpenWeatherMap onecall
     const publicUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,daily,alerts&appid=${API_KEY}`
     const r2 = await fetch(publicUrl)
-    if (!r2.ok) throw new Error('Weather request failed')
+    if (!r2.ok) {
+      const errorText = await r2.text()
+      throw new Error(`Weather API failed: ${r2.status} - ${errorText}`)
+    }
     return await r2.json()
   }
 
