@@ -5,6 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "vite",
+    "dev:all": "concurrently \"npm run start:server\" \"npm run dev\"",
+    "start:server": "npm run --prefix server start",
+    "setup-and-dev": "node scripts/bootstrap.js",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -14,6 +17,7 @@
   },
   "devDependencies": {
     "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^5.0.0"
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^8.2.0"
   }
 }

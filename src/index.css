@@ -13,3 +13,12 @@ body {
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
+
+.uv-controls { align-items: center; }
+.uv-input { flex: 1; padding: 8px 10px; border-radius: 6px; border: 1px solid #ddd; }
+.btn { padding: 8px 12px; border-radius: 6px; border: 1px solid transparent; background: #eef2ff; cursor: pointer; }
+.btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-primary { background: #2563eb; color: white; border-color: #1e40af; }
+.btn-geo { background: #fff; border: 1px solid #ddd; font-size: 16px }
+.uv-error { color: #a33 }
+.uv-result { padding: 12px; border-radius: 6px; background: #f7fbff; border: 1px solid #e6f0ff; }

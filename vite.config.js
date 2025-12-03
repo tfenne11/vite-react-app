@@ -5,5 +5,14 @@ export default defineConfig({
   plugins: [react()],
   ssr: {
     noExternal: ['@vitejs/plugin-react']
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:4000',
+        changeOrigin: true,
+        secure: false
+      }
+    }
   }
 })
