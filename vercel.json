@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "regions": ["sfo1"],
+  "env": {
+    "VITE_APP_NAME": "vite-react-app"
+  }
+}
